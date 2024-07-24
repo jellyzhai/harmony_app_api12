@@ -1,0 +1,19 @@
+{
+  "routerMap": [
+    {
+      "name": "ComponentOne",
+      "buildFunction": "ComponentOneBuilder",
+      "pageSourceFile": "src/main/ets/views/navigationPage/ComponentOne.ets"
+    },
+    {
+      "name": "ComponentTwo",
+      "buildFunction": "ComponentTwoBuilder",
+      "pageSourceFile": "src/main/ets/views/navigationPage/ComponentTwo.ets"
+    },
+    {
+      "name": "ComponentThree",
+      "buildFunction": "ComponentThreeBuilder",
+      "pageSourceFile": "src/main/ets/views/navigationPage/ComponentThree.ets"
+    }
+  ]
+}
