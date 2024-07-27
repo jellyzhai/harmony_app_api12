@@ -43,7 +43,7 @@
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
-//        配置如下信息，则桌面会有入口图标
+        //        配置如下信息，则桌面会有入口图标
         /*"skills": [
           {
             "entities": [
@@ -68,6 +68,18 @@
             "resource": "$profile:backup_config"
           }
         ],
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.READ_MEDIA",
+        "reason": "$string:ReadUserMediaReason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
       }
     ]
   }

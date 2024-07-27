@@ -1,5 +1,6 @@
-export interface INewsListItem {
-  title: string;
-  icon: ResourceStr;
-  content: string;
+@ObservedV2
+export class INewsListItem {
+  @Trace title: string = '';
+  @Trace icon: ResourceStr = '';
+  @Trace content: string = '';
 }

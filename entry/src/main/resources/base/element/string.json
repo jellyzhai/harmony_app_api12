@@ -19,6 +19,10 @@
     {
       "name": "TerminateSelfWithResultAbility_label",
       "value": "label"
+    },
+    {
+      "name": "ReadUserMediaReason",
+      "value": "using for upload file to server"
     }
   ]
 }

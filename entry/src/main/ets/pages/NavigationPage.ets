@@ -11,7 +11,6 @@ import { RouterParams } from '../viewModels/common';
 struct NavigationPage {
   routerParams = router.getParams() as RouterParams
   pathStack: NavPathStack = new NavPathStack()
-  // 不显示图标
   menus: NavigationMenuItem[] = [
     {
       value: '搜索',
