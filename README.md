@@ -1,0 +1,1 @@
+- 使用 harmonyOS api 12 版本开发 
