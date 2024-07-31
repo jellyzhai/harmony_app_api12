@@ -4,7 +4,7 @@ function ComponentOneBuilder() {
   ComponentOne()
 }
 
-@ComponentV2
+@ComponentV2({ freezeWhenInactive: true })
 struct ComponentOne {
   @Local name: string = ''
   @Local param: Record<string, string> = {}

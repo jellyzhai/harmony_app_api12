@@ -4,6 +4,8 @@
     "pages/StartAbilityForResult",
     "pages/DestroyAbilityWithResult",
     "pages/NavigationPage",
-    "pages/NewsCreateLoadRefresh"
+    "pages/NewsCreateLoadRefresh",
+    "pages/CustomDialogPage",
+    "pages/ActionSheetOrListSelectDialog"
   ]
 }

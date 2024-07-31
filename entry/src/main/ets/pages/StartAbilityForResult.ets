@@ -16,7 +16,8 @@ struct StartAbilityForResult {
   build() {
     Column({ space: 16 }) {
       PageHeader({
-        title: this.routerParams.title, callbackBeforeBack: () => {
+        title: this.routerParams.title,
+        callbackBeforeBack: () => {
           router.showAlertBeforeBackPage({ message: '确定要离开么？' })
         }
       })

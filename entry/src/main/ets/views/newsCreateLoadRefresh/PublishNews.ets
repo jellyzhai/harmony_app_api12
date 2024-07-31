@@ -84,6 +84,9 @@ export struct PublishNews {
                         this.selectImgUrl = destFileUriObj.toString()
                         this.news.icon = destFileUriObj.toString()
                         console.log('test_tag destFileUriObj.toString()', destFileUriObj.toString())
+
+                        fs.closeSync(selectedFile)
+                        fs.closeSync(destFile)
                       } catch (error) {
                         console.error('test_tag copyFileSync error', JSON.stringify(error))
                       }

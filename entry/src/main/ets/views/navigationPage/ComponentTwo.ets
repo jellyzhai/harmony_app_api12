@@ -1,5 +1,4 @@
 import { MyCustomComponent } from './MyCustomComponent'
-import { router } from '@kit.ArkUI'
 
 @Builder
 // function ComponentOneBuilder(name: string, param: Record<string, string>) {
@@ -7,8 +6,7 @@ export function ComponentTwoBuilder() {
   ComponentTwo()
 }
 
-
-@ComponentV2
+@ComponentV2({ freezeWhenInactive: true })
 struct ComponentTwo {
   @Local name: string = ''
   @Local param: Record<string, string> | undefined = undefined

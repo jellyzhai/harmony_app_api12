@@ -1,5 +1,4 @@
 import { IPageForIndex } from '../viewModels';
-import { common, Want } from '@kit.AbilityKit';
 import { router } from '@kit.ArkUI';
 
 @Entry
@@ -15,8 +14,16 @@ struct Index {
       url: 'pages/NavigationPage'
     },
     {
-      title: '相册选择/下拉刷新/上滑加载/上传图片',
+      title: '相册选择/下拉刷新/上滑加载',
       url: 'pages/NewsCreateLoadRefresh'
+    },
+    {
+      title: '自定义二次确认弹窗',
+      url: 'pages/CustomDialogPage'
+    },
+    {
+      title: 'ActionSheet列表选择对话框',
+      url: 'pages/ActionSheetOrListSelectDialog'
     }
   ];
 

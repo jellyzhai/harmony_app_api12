@@ -4,8 +4,7 @@ export function ComponentThreeBuilder() {
   ComponentThree()
 }
 
-
-@ComponentV2
+@ComponentV2({ freezeWhenInactive: true })
 struct ComponentThree {
   @Local name: string = ''
   @Local param: Record<string, string> | undefined = undefined

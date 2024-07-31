@@ -1,7 +1,7 @@
 import { uiObserver } from '@kit.ArkUI'
 import { JSON } from '@kit.ArkTS'
 
-@ComponentV2
+@ComponentV2({ freezeWhenInactive: true })
 export struct MyCustomComponent {
   navDestinationInfo: uiObserver.NavDestinationInfo | undefined = undefined
 

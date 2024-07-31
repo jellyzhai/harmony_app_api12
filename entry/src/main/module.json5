@@ -3,6 +3,7 @@
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",
+    "srcEntry": "./ets/myAbilityStage/MyAbilityStage.ets",
     "mainElement": "EntryAbility",
     "deviceTypes": [
       "phone",
@@ -23,6 +24,12 @@
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
+        /*
+         * UIAbilityContext调用terminateSelf()方法停止当前UIAbility实例时，默认会保留该实例的快照（Snapshot），
+         * 即在最近任务列表中 仍然能查看到该实例对应的任务。如不需要保留该实例的快照，
+         * 可以在其对应UIAbility的module.json5配置文件中，将abilities标签的removeMissionAfterTerminate字段配置为true。
+         */
+        "removeMissionAfterTerminate": true,
         "skills": [
           {
             "entities": [
@@ -42,7 +49,7 @@
         "label": "$string:TerminateSelfWithResultAbility_label",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
-        "exported": true,
+        "exported": true
         //        配置如下信息，则桌面会有入口图标
         /*"skills": [
           {
@@ -67,7 +74,7 @@
             "name": "ohos.extension.backup",
             "resource": "$profile:backup_config"
           }
-        ],
+        ]
       }
     ],
     "requestPermissions": [
