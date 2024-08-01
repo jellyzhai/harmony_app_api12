@@ -2,7 +2,7 @@ import { AbilityConstant, AbilityStage, Configuration, Want } from '@kit.Ability
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { HiLogDomainTagEnum } from '../models/common';
 
-class MyAbilityStage extends AbilityStage {
+export class MyAbilityStage extends AbilityStage {
   // 应用的HAP在首次加载的时，为该Module初始化操作
   onCreate(): void {
     hilog.info(HiLogDomainTagEnum.domain, HiLogDomainTagEnum.tag, 'AbilityStage onCreate')

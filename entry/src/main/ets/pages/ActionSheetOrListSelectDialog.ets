@@ -21,7 +21,7 @@ struct ActionSheetOrListSelectDialog {
     ActionSheet.show({
       title: '水果列表',
       message: '请选择最喜欢的水果',
-      autoCancel: false,
+      // autoCancel: false,
       height: 200,
       sheets: this.sheets,
       // confirm: {
