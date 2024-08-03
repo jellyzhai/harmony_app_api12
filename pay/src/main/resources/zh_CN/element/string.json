@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "FeatureAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "FeatureAbility_label",
+      "value": "FeatureAbility_label"
+    },
+    {
+      "name": "StartSpecifiedAbilityIntoSpecifiedPage_desc",
+      "value": "description"
+    },
+    {
+      "name": "StartSpecifiedAbilityIntoSpecifiedPage_label",
+      "value": "label"
+    }
+  ]
+}

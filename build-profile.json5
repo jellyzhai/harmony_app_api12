@@ -30,6 +30,30 @@
           ]
         }
       ]
+    },
+    {
+      "name": "pay",
+      "srcPath": "./pay",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "typesCommon",
+      "srcPath": "./common/typesCommon",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }

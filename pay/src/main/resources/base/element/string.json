@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "FeatureAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "FeatureAbility_label",
+      "value": "FeatureAbility_label"
+    },
+    {
+      "name": "StartSpecifiedAbilityIntoSpecifiedPage_desc",
+      "value": "description"
+    },
+    {
+      "name": "PayAbility_label",
+      "value": "PayAbility_label"
+    }
+  ]
+}

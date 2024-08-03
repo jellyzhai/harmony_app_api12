@@ -37,6 +37,13 @@
             ],
             "actions": [
               "action.system.home"
+            ],
+            "uris": [
+              {
+                "scheme": "http",
+                "host": "harmony_app_api12.example.com",
+                "path": "entry"
+              }
             ]
           }
         ]
@@ -49,7 +56,9 @@
         "label": "$string:TerminateSelfWithResultAbility_label",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
-        "exported": true
+        "exported": true,
+        // 在调用 context.terminalSelf() 销毁能力后，不在后台任务中 显示能力快照
+        "removeMissionAfterTerminate": true,
         //        配置如下信息，则桌面会有入口图标
         /*"skills": [
           {

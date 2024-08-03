@@ -24,6 +24,10 @@ struct Index {
     {
       title: 'ActionSheet列表选择对话框',
       url: 'pages/ActionSheetOrListSelectDialog'
+    },
+    {
+      title: 'openLink启动其他模块的Ability进入指定页面',
+      url: 'pages/StartAbilitySpecifiedPage'
     }
   ];
 

@@ -1,5 +1,5 @@
 {
-  "name": "entry",
+  "name": "pay",
   "version": "1.0.0",
   "description": "Please describe the basic information.",
   "main": "",
@@ -9,4 +9,3 @@
     "@ohos/typesCommon": "file:../common/typesCommon"
   }
 }
-

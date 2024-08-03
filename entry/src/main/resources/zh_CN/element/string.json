@@ -10,7 +10,7 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "入口能力"
     },
     {
       "name": "TerminateSelfWithResultAbility_desc",
@@ -23,6 +23,22 @@
     {
       "name": "ReadUserMediaReason",
       "value": "用于上传文件到服务器"
+    },
+    {
+      "name": "StartAbilitySpecifiedPage_desc",
+      "value": "description"
+    },
+    {
+      "name": "StartAbilitySpecifiedPage_label",
+      "value": "label"
+    },
+    {
+      "name": "StartSpecifiedAbilityIntoSpecifiedPage_desc",
+      "value": "description"
+    },
+    {
+      "name": "StartSpecifiedAbilityIntoSpecifiedPage_label",
+      "value": "label"
     }
   ]
 }

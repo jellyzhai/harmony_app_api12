@@ -6,6 +6,7 @@
     "pages/NavigationPage",
     "pages/NewsCreateLoadRefresh",
     "pages/CustomDialogPage",
-    "pages/ActionSheetOrListSelectDialog"
+    "pages/ActionSheetOrListSelectDialog",
+    "pages/StartAbilitySpecifiedPage"
   ]
 }

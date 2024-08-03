@@ -1,0 +1,1 @@
+export { IPayWantParams } from './src/main/ets/types/commonTypes'

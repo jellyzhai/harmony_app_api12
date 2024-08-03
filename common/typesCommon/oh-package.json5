@@ -1,12 +1,9 @@
 {
-  "name": "entry",
+  "name": "typescommon",
   "version": "1.0.0",
   "description": "Please describe the basic information.",
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {
-    "@ohos/typesCommon": "file:../common/typesCommon"
-  }
+  "dependencies": {}
 }
-

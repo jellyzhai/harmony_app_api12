@@ -1,11 +1,15 @@
 import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { window } from '@kit.ArkUI';
+import { Router, window } from '@kit.ArkUI';
+import { JSON } from '@kit.ArkTS';
+import { IPayWantParams } from '@ohos/typesCommon';
 
 export default class EntryAbility extends UIAbility {
+  windowStage?: window.WindowStage
 
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     const context: common.UIAbilityContext = this.context
+    console.log('test_tag EntryAbility onCreate want', JSON.stringify(want))
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
 
@@ -17,6 +21,23 @@ export default class EntryAbility extends UIAbility {
    * 不会进入其onCreate()和onWindowStageCreate()生命周期回调。
    * */
   onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    console.log('test_tag EntryAbility onNewWant want', JSON.stringify(want))
+
+    let routerObj: Router | undefined = undefined
+
+    try {
+      routerObj = this.windowStage?.getMainWindowSync().getUIContext().getRouter()
+    } catch (e) {
+      hilog.error(0x0000, 'test_tag', '获取router失败：' + JSON.stringify(e))
+    }
+
+    // const params: undefined | IPayWantParams = want.parameters?.payInfo as IPayWantParams
+    //
+    // if (params?.fromAbilityUri && params?.fromPageUrl) {
+    //   routerObj?.replaceUrl({
+    //     url: params.fromPageUrl, params
+    //   })
+    // }
   }
 
   onDestroy(): void {
@@ -24,8 +45,7 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    this.windowStage = windowStage
 
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
@@ -34,6 +54,9 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
+
+    // Main window is created, set main page for this ability
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
   }
 
   onWindowStageDestroy(): void {
