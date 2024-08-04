@@ -28,6 +28,10 @@ struct Index {
     {
       title: 'openLink启动其他模块的Ability进入指定页面',
       url: 'pages/StartAbilitySpecifiedPage'
+    },
+    {
+      title: '文本选择器/文本选择对话框',
+      url: 'pages/TextPickerPage'
     }
   ];
 

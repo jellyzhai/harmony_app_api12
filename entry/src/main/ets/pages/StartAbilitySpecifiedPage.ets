@@ -1,10 +1,9 @@
-import { common, OpenLinkOptions, Want } from '@kit.AbilityKit';
+import { common, OpenLinkOptions } from '@kit.AbilityKit';
 import { JSON } from '@kit.ArkTS';
 import { IPayWantParams } from '@ohos/typesCommon'
-import { promptAction, router } from '@kit.ArkUI';
+import { router } from '@kit.ArkUI';
 import { PageHeader } from '../views/PageHeader';
 import { RouterParams } from '../viewModels/common';
-import json from '@ohos.util.json';
 
 @Entry
 @ComponentV2
