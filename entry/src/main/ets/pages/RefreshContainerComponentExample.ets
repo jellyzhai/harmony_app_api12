@@ -33,6 +33,7 @@ struct RefreshContainerComponentExample {
         .fontSize(18)
     }
     .width('100%')
+    .height('100%')
     .justifyContent(FlexAlign.Center)
     .linearGradient({ colors: [[Color.Transparent, 0], [Color.White, 0.5], [Color.Transparent, 1]] })
     // .linearGradientBlur(100, { fractionStops: [[0.6, 1], [0.6, 1], [0.6, 1]], direction: GradientDirection.Top })
@@ -70,6 +71,7 @@ struct RefreshContainerComponentExample {
               this.customRefreshView('加载中...')
             }
             .width('100%')
+            .height(62)
           }
         }
         .height('100%')

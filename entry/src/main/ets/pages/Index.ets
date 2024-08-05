@@ -36,6 +36,10 @@ struct Index {
     {
       title: 'Refresh刷新容器使用示例',
       url: 'pages/RefreshContainerComponentExample'
+    },
+    {
+      title: '使用HSP动态共享包中的资源',
+      url: 'pages/UseHspContent'
     }
   ];
 

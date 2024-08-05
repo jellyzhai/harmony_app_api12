@@ -1,8 +1,7 @@
 {
   "module": {
-    "name": "typesCommon",
+    "name": "hsp1_test",
     "type": "feature",
-    "description": "$string:module_desc",
     "deviceTypes": [
       "phone",
       "tablet",

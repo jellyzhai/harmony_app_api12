@@ -345,26 +345,3 @@ function getRandom(lessThanNum: number, minNum = 0) {
   const max = Math.floor(Math.random() * lessThanNum);
   return max <= minNum ? minNum : max;
 }
-
-function getFibonacciArrBy(count: number) {
-  let sum = 0;
-  let index = 0;
-  let fibonacciNum = 0
-  const arr: number[] = [];
-  const getFibonacciNum: (n: number) => number = (n) => {
-    if (n <= 1) {
-      return n;
-    }
-    return getFibonacciNum(n - 2) + getFibonacciNum(n - 1);
-  }
-
-  while (sum < count) {
-    fibonacciNum = getFibonacciNum(index);
-    arr.push(fibonacciNum);
-    sum += fibonacciNum;
-    index++;
-  }
-
-  arr.push(count - fibonacciNum);
-  return arr;
-}

@@ -9,6 +9,7 @@
     "pages/ActionSheetOrListSelectDialog",
     "pages/StartAbilitySpecifiedPage",
     "pages/TextPickerPage",
-    "pages/RefreshContainerComponentExample"
+    "pages/RefreshContainerComponentExample",
+    "pages/UseHspContent"
   ]
 }

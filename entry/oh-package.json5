@@ -6,7 +6,9 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@ohos/typesCommon": "file:../common/typesCommon"
-  }
+    "@ohos/typesCommon": "file:../common/typesCommon",
+    "hsp1": "file:../hsp1"
+  },
+  "devDependencies": {},
+  "dynamicDependencies": {}
 }
-
