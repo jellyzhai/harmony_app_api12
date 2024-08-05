@@ -8,6 +8,7 @@
     "pages/CustomDialogPage",
     "pages/ActionSheetOrListSelectDialog",
     "pages/StartAbilitySpecifiedPage",
-    "pages/TextPickerPage"
+    "pages/TextPickerPage",
+    "pages/RefreshContainerComponentExample"
   ]
 }

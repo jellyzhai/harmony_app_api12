@@ -32,6 +32,10 @@ struct Index {
     {
       title: '文本选择器/文本选择对话框',
       url: 'pages/TextPickerPage'
+    },
+    {
+      title: 'Refresh刷新容器使用示例',
+      url: 'pages/RefreshContainerComponentExample'
     }
   ];
 
