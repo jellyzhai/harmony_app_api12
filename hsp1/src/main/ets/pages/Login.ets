@@ -1,6 +1,6 @@
 import { router } from '@kit.ArkUI'
 
-@Entry
+@Entry({ routeName: 'appLogin' })
 @ComponentV2
 export struct Login {
   textUserName = '用户名'
@@ -9,6 +9,7 @@ export struct Login {
   textPasswordPlaceholder = '请输入密码'
   textLogin = '登录'
   fromPageUrl: string | undefined = (router.getParams() as Record<'fromPageUrl', string>)?.fromPageUrl
+  fromPageName: string | undefined = (router.getParams() as Record<'fromPageName', string>)?.fromPageName
   @Local username: string = ''
   @Local password: string = ''
   @Local pageTranslateX: number | string = 0
@@ -54,10 +55,7 @@ export struct Login {
           // 以下动画解决，从HSP 路由页面返回时，没有动画问题，出现白闪
           animateTo(
             {
-              duration: 300,
-              onFinish: () => {
-
-              }
+              duration: 300
             },
             () => {
               this.pageTranslateX = '100%'
@@ -76,6 +74,14 @@ export struct Login {
               })
               // 这里不能使用路由的单例模式，否则，会从路由栈中把已存在的路由移动到栈顶，导致当前路由数据丢失
               // }, router.RouterMode.Single)
+            } else if (this.fromPageName) {
+              router.replaceNamedRoute({
+                name: this.fromPageName,
+                params: {
+                  username: this.username,
+                  password: this.password
+                }
+              })
             } else {
               router.back()
             }

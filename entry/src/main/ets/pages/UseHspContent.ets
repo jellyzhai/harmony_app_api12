@@ -4,13 +4,18 @@ import { RouterParams } from '../viewModels/common';
 import { getFibonacciArrBySum, ILogin, ResourceManagerHSP1 } from 'hsp1';
 import { UseHspContentPageTitle } from '../constants/title';
 
-@Entry
+// 使用明明路由跳转前，需要先引入HSP中的页面
+import 'hsp1/ets/pages/Login'
+
+@Entry({ routeName: 'useHspContentPage' })
 @ComponentV2
 struct UseHspContent {
   private routerParams = router.getParams() as (RouterParams | ILogin);
   fibonacciArr = getFibonacciArrBySum(3000)
   loginUrl = '@bundle:com.example.harmony_app_api12/hsp1/ets/pages/Login'
+  loginPageName = 'appLogin'
   currentPageUrl = 'pages/UseHspContent'
+  currentPagePage = 'useHspContentPage'
   isEnterStack = true
   @Local poemTextWidth = 16
   @Local pageTranslateX: number | string = 0
@@ -73,9 +78,15 @@ struct UseHspContent {
       Text('数组项之和小于3000的斐波那契数列：\n' + this.fibonacciArr.toString())
         .wordBreak(WordBreak.BREAK_WORD)
 
-      Button('跳转到HSP的登录页面')
+      Button('使用路由页面路径跳转到HSP的登录页')
         .onClick(() => {
           router.pushUrl({ url: this.loginUrl, params: { fromPageUrl: this.currentPageUrl } }, router.RouterMode.Single)
+        })
+
+      Button('使用路由页面命名跳转到HSP的登录页')
+        .onClick(() => {
+          router.pushNamedRoute({ name: this.loginPageName, params: { fromPageName: this.currentPagePage } },
+            router.RouterMode.Single)
         })
 
       Text() {
