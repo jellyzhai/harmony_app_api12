@@ -11,11 +11,38 @@ struct UseHspContent {
   fibonacciArr = getFibonacciArrBySum(3000)
   loginUrl = '@bundle:com.example.harmony_app_api12/hsp1/ets/pages/Login'
   currentPageUrl = 'pages/UseHspContent'
+  isEnterStack = true
   @Local poemTextWidth = 16
+  @Local pageTranslateX: number | string = 0
+
+  onPageShow(): void {
+    console.log('test_tag onPageShow this.routerParams', JSON.stringify(this.routerParams))
+    animateTo(
+      { duration: 200, curve: Curve.Smooth },
+      () => {
+        this.pageTranslateX = 0
+      })
+  }
+
+  onPageHide(): void {
+    if (this.isEnterStack) {
+      animateTo(
+        { duration: 300, curve: Curve.Smooth },
+        () => {
+          this.pageTranslateX = '-100%'
+        }
+      )
+    }
+  }
 
   build() {
     Column({ space: 16 }) {
-      PageHeader({ title: (this.routerParams as RouterParams).title || UseHspContentPageTitle })
+      PageHeader({
+        title: (this.routerParams as RouterParams).title || UseHspContentPageTitle,
+        callbackBeforeBack: () => {
+          this.isEnterStack = false
+        }
+      })
 
       Column({ space: 16 }) {
         Text(ResourceManagerHSP1.getStringByName('poem_from_mao'))
@@ -48,7 +75,7 @@ struct UseHspContent {
 
       Button('跳转到HSP的登录页面')
         .onClick(() => {
-          router.pushUrl({ url: this.loginUrl, params: { fromPageUrl: this.currentPageUrl } })
+          router.pushUrl({ url: this.loginUrl, params: { fromPageUrl: this.currentPageUrl } }, router.RouterMode.Single)
         })
 
       Text() {
@@ -62,5 +89,6 @@ struct UseHspContent {
     .width('100%')
     .backgroundColor('rgba(0,0,0,0.1)')
     .padding(16)
+    .translate({ x: this.pageTranslateX })
   }
 }

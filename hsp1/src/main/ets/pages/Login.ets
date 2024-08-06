@@ -11,6 +11,7 @@ export struct Login {
   fromPageUrl: string | undefined = (router.getParams() as Record<'fromPageUrl', string>)?.fromPageUrl
   @Local username: string = ''
   @Local password: string = ''
+  @Local pageTranslateX: number | string = 0
 
   @Builder
   LabelBuilder(text: string) {
@@ -50,17 +51,35 @@ export struct Login {
         .width(200)
         .fontSize(20)
         .onClick(() => {
-          if (this.fromPageUrl) {
-            router.replaceUrl({
-              url: this.fromPageUrl,
-              params: {
-                username: this.username,
-                password: this.password
+          // 以下动画解决，从HSP 路由页面返回时，没有动画问题，出现白闪
+          animateTo(
+            {
+              duration: 300,
+              onFinish: () => {
+
               }
-            })
-          } else {
-            router.back()
-          }
+            },
+            () => {
+              this.pageTranslateX = '100%'
+            }
+          )
+
+          // 在页面退出动画执行一半时，就执行路由返回
+          setTimeout(() => {
+            if (this.fromPageUrl) {
+              router.replaceUrl({
+                url: this.fromPageUrl,
+                params: {
+                  username: this.username,
+                  password: this.password
+                }
+              })
+              // 这里不能使用路由的单例模式，否则，会从路由栈中把已存在的路由移动到栈顶，导致当前路由数据丢失
+              // }, router.RouterMode.Single)
+            } else {
+              router.back()
+            }
+          }, 150)
 
           // 这种方式跳转过去拿不到参数信息
           /*if (this.fromPageUrl) {
@@ -82,5 +101,6 @@ export struct Login {
       direction: GradientDirection.RightBottom,
       colors: [['rgba(255,0,0,0.1)', 0.33], ['rgba(255,0,0,0.2)', 0.66], ['rgba(255,0,0,0.3)', 1]]
     })
+    .translate({ x: this.pageTranslateX })
   }
 }
