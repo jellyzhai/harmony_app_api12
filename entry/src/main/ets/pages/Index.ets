@@ -34,12 +34,20 @@ struct Index {
       url: 'pages/TextPickerPage'
     },
     {
-      title: 'Refresh刷新容器使用示例',
+      title: 'Refresh刷新容器/onMove实现拖放',
       url: 'pages/RefreshContainerComponentExample'
     },
     {
       title: '使用HSP动态共享包中的资源',
       url: 'pages/UseHspContent'
+    },
+    {
+      title: 'LocalStorage装饰器不能在V2组件中使用, 其他方式实现一样效果[1]',
+      url: 'pages/LocalStorageUsage'
+    },
+    {
+      title: '配合LocalStorageUsage页面使用LocalStorage[2]',
+      url: 'pages/LocalStorageUsageTest'
     }
   ];
 

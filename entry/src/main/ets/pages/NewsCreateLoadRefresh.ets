@@ -28,9 +28,9 @@ struct NewsCreateLoadRefresh {
   }
 
   aboutToAppear(): void {
-    this.newsList = [1, 2, 3, 4, 5, 2, 3, 4, 5].map((value, index) => {
+    this.newsList = ['A','B','C','D','E','F','G','H','I','J'].map((value, index) => {
       return {
-        title: index + 1 + '、Object literal must correspond to some explicitly declared class or interface',
+        title: index + 1 + `${value}、Object literal must correspond to some explicitly declared class or interface`,
         icon: $r(`app.media.${this.icons[index % 5]}`),
         // 也可以正常显示图片，app 和 sys功能结果一致
         // icon: $r(`sys.media.${this.icons[index % 5]}`),

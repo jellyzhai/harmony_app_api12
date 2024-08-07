@@ -4,6 +4,9 @@ import { Router, window } from '@kit.ArkUI';
 import { JSON } from '@kit.ArkTS';
 import { IPayWantParams } from '@ohos/typesCommon';
 
+const localStorage = new LocalStorage()
+localStorage.setOrCreate('nameFromEntry', 'jack')
+
 export default class EntryAbility extends UIAbility {
   windowStage?: window.WindowStage
 
@@ -47,7 +50,7 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     this.windowStage = windowStage
 
-    windowStage.loadContent('pages/Index', (err) => {
+    windowStage.loadContent('pages/Index', localStorage, (err) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

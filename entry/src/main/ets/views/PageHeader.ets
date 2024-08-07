@@ -19,7 +19,7 @@ export struct PageHeader {
         .layoutWeight(1)
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
-        .maxLines(2)
+        .maxLines(3)
         .textOverflow({ overflow: TextOverflow.Ellipsis })
     }
     .padding(8)

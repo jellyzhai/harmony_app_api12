@@ -10,6 +10,8 @@
     "pages/StartAbilitySpecifiedPage",
     "pages/TextPickerPage",
     "pages/RefreshContainerComponentExample",
-    "pages/UseHspContent"
+    "pages/UseHspContent",
+    "pages/LocalStorageUsage",
+    "pages/LocalStorageUsageTest"
   ]
 }
