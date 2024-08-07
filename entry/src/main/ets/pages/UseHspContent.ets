@@ -2,7 +2,7 @@ import { PageHeader } from '../views/PageHeader';
 import { router } from '@kit.ArkUI';
 import { RouterParams } from '../viewModels/common';
 import { getFibonacciArrBySum, ILogin, ResourceManagerHSP1 } from 'hsp1';
-import { UseHspContentPageTitle } from '../constants/title';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 // 使用明明路由跳转前，需要先引入HSP中的页面
 import 'hsp1/ets/pages/Login'
@@ -11,6 +11,7 @@ import 'hsp1/ets/pages/Login'
 @ComponentV2
 struct UseHspContent {
   private routerParams = router.getParams() as (RouterParams | ILogin);
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('UseHspContent'))?.title
   fibonacciArr = getFibonacciArrBySum(3000)
   loginUrl = '@bundle:com.example.harmony_app_api12/hsp1/ets/pages/Login'
   loginPageName = 'appLogin'
@@ -43,7 +44,7 @@ struct UseHspContent {
   build() {
     Column({ space: 16 }) {
       PageHeader({
-        title: (this.routerParams as RouterParams).title || UseHspContentPageTitle,
+        title: this.defaultTitle,
         callbackBeforeBack: () => {
           this.isEnterStack = false
         }

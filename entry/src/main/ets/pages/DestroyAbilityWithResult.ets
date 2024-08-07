@@ -15,6 +15,7 @@ struct DestroyAbilityWithResult {
   get isEnabled(): boolean {
     return !!this.returnContent.trim()
   }
+
   build() {
     Column({ space: 16 }) {
       Text(`调用方传递的数据：${Reflect.get(this.wantParameters, 'info') || '无'}`)
@@ -48,6 +49,10 @@ struct DestroyAbilityWithResult {
           })
       }
 
+      Button('跳转到entry模块的EntryAbility，验证LocalStorage是否不同能力共享')
+        .onClick(() => {
+          router.pushUrl({ url: 'pages/LocalStorageUsageTest' })
+        })
     }
     .height('100%')
     .width('100%')

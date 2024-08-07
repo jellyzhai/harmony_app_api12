@@ -5,18 +5,20 @@ import { common, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { HiLogDomainTagEnum, WantParametersForResult } from '../models/common';
 import { JSON } from '@kit.ArkTS';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 @Entry
 @ComponentV2
 struct StartAbilityForResult {
   routerParams = router.getParams() as RouterParams;
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('StartAbilityForResult'))?.title
   uiAbilityContext = getContext(this) as common.UIAbilityContext
   @Local resultStr: string = ''
 
   build() {
     Column({ space: 16 }) {
       PageHeader({
-        title: this.routerParams.title,
+        title: this.defaultTitle,
         callbackBeforeBack: () => {
           router.showAlertBeforeBackPage({ message: '确定要离开么？' })
         }

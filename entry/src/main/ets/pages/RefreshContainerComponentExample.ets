@@ -2,11 +2,13 @@ import { promptAction, router } from '@kit.ArkUI';
 import { RouterParams } from '../viewModels/common';
 import { PageHeader } from '../views/PageHeader';
 import { JSON } from '@kit.ArkTS';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 @Entry
 @ComponentV2
 struct RefreshContainerComponentExample {
   routerParams = router.getParams() as RouterParams;
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('RefreshContainerComponentExample'))?.title
   promptText: string = '刷新中...'
   isReachEnd = false
   listScroller = new Scroller()
@@ -47,7 +49,7 @@ struct RefreshContainerComponentExample {
 
   build() {
     Column() {
-      PageHeader({ title: this.routerParams.title })
+      PageHeader({ title: this.defaultTitle })
 
       // 正常V2版本中，!!使用在内置和自定义组件后，可以实现双向绑定；目前暂时不生效，使用V1版本 $$ 生效
       /*

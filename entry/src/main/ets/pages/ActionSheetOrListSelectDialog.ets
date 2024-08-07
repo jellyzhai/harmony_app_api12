@@ -1,11 +1,13 @@
 import { RouterParams } from '../viewModels/common';
 import { PageHeader } from '../views/PageHeader';
 import { router } from '@kit.ArkUI';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 @Entry
 @ComponentV2
 struct ActionSheetOrListSelectDialog {
   @Local selectedFruit: string = ''
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('ActionSheetOrListSelectDialog'))?.title
   routerParams = router.getParams() as RouterParams;
   fruits: string[] = ['苹果', '葡萄', '香蕉', '蟠桃', '菠萝', '椰子', '火龙果', '山足']
   sheets: SheetInfo[] = this.fruits.map(item => {
@@ -35,7 +37,7 @@ struct ActionSheetOrListSelectDialog {
 
   build() {
     Column({ space: 16 }) {
-      PageHeader({ title: this.routerParams.title })
+      PageHeader({ title: this.defaultTitle })
 
       Row() {
         Text('最喜欢的水果')

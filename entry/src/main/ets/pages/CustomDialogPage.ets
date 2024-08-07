@@ -1,11 +1,13 @@
 import { RouterParams } from '../viewModels/common';
 import { PageHeader } from '../views/PageHeader';
 import { router } from '@kit.ArkUI';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 @Entry
 @ComponentV2
 struct CustomDialogPage {
   @Local enableNotify = true
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('CustomDialogPage'))?.title
   routerParams = router.getParams() as RouterParams;
   firstDialogController = new CustomDialogController({
     builder: FirstCustomDialog({
@@ -30,7 +32,7 @@ struct CustomDialogPage {
 
   build() {
     Column({ space: 16 }) {
-      PageHeader({ title: this.routerParams.title })
+      PageHeader({ title: this.defaultTitle })
 
       Row() {
         Text('通知')

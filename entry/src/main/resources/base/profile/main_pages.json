@@ -12,6 +12,8 @@
     "pages/RefreshContainerComponentExample",
     "pages/UseHspContent",
     "pages/LocalStorageUsage",
-    "pages/LocalStorageUsageTest"
+    "pages/LocalStorageUsageTest",
+    "pages/PersistentStorage_Environment_Usage",
+    "pages/EmitterUsage"
   ]
 }

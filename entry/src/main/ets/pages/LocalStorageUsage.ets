@@ -1,6 +1,7 @@
 import { RouterParams } from '../viewModels/common';
 import { PageHeader } from '../views/PageHeader'
 import { router } from '@kit.ArkUI';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 const localStorageFromEntry = LocalStorage.getShared()
 const nameFromEntryKey = 'nameFromEntry'
@@ -18,9 +19,11 @@ const localStorage: LocalStorage =
 @ComponentV2
 struct LocalStorageUsage {
   private routerParams = router.getParams() as RouterParams;
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('LocalStorageUsage'))?.title
   @Local nameFromEntry: string | undefined = ''
   @Local age: number | undefined = localStorage.get('age')
   @Local newNameFromEntry: string = ''
+  @Local localStorageKeys: string[] = []
 
   updateNameFromEntry() {
     this.nameFromEntry = localStorageFromEntry.get(nameFromEntryKey)
@@ -28,6 +31,10 @@ struct LocalStorageUsage {
 
   aboutToAppear(): void {
     this.updateNameFromEntry()
+
+    for (const key of localStorageFromEntry.keys()) {
+      this.localStorageKeys.push(key)
+    }
     // console.log('test_tag localStorageFromEntry keys', localStorageFromEntry.keys().next().value)
   }
 
@@ -38,8 +45,15 @@ struct LocalStorageUsage {
   build() {
     Column({ space: 16 }) {
       PageHeader({
-        title: (this.routerParams as RouterParams).title
+        title: this.defaultTitle
       })
+
+      Text(`
+      当前路由页面中，LocalStorage.getShared() 获取的LocalStorage对象，是当前页面所在windowStage 所在的ability 中，
+      window.loadContent方法传递的LocalStorage对象;
+      当前页面 被哪个ability窗口舞台加载的页面 给唤醒压入路由栈，LocalStorage.getShared()就属于哪个ability`
+      )
+        .fontWeight(FontWeight.Bold)
 
       Column({ space: 16 }) {
         TextInput({ placeholder: '输入nameFromEntry属性的值' })
@@ -59,6 +73,8 @@ struct LocalStorageUsage {
       .borderRadius(16)
       .width('100%')
       .padding(16)
+
+      Text('LocalStorage.getShared 返回的共享LocalStorage中的keys: \n' + this.localStorageKeys.toString())
 
       Column({ space: 16 }) {
         Row({ space: 16 }) {

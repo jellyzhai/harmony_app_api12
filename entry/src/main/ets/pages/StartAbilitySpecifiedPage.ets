@@ -4,12 +4,13 @@ import { IPayWantParams } from '@ohos/typesCommon'
 import { router } from '@kit.ArkUI';
 import { PageHeader } from '../views/PageHeader';
 import { RouterParams } from '../viewModels/common';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 @Entry
 @ComponentV2
 struct StartAbilitySpecifiedPage {
-  defaultTitle = '启动Ability进入指定页面'
   routerParams = router.getParams() as (RouterParams | IPayWantParams);
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('StartAbilitySpecifiedPage'))?.title
   context = getContext(this) as common.UIAbilityContext
   storeId: string = '202408021802'
   payAmount: number = 100
@@ -20,7 +21,7 @@ struct StartAbilitySpecifiedPage {
 
   build() {
     Column({ space: 16 }) {
-      PageHeader({ title: (this.routerParams as RouterParams).title || this.defaultTitle })
+      PageHeader({ title: this.defaultTitle })
 
       Button(this.message)
         .onClick(() => {

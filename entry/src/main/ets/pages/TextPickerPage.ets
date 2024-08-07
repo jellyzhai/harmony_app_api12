@@ -2,11 +2,13 @@ import { JSON } from '@kit.ArkTS';
 import { PageHeader } from '../views/PageHeader';
 import { RouterParams } from '../viewModels/common';
 import { router } from '@kit.ArkUI';
+import { RoutePagesInfo } from '../constants/pageTitleUrl';
 
 @Entry
 @ComponentV2
 struct TextPickerPage {
   routerParams = router.getParams() as RouterParams;
+  defaultTitle = RoutePagesInfo.find(item => item.url.includes('TextPickerPage'))?.title
   private singleSelectedTextColor: Color = Color.Green
   @Local textFruits: string[] = ['0-peach', '1-apple', '2-pear', '3-orange', '4-banana'];
   @Local singleSelectedIndex: number = 2
@@ -96,7 +98,7 @@ struct TextPickerPage {
 
   build() {
     Column({ space: 16 }) {
-      PageHeader({ title: (this.routerParams as RouterParams).title })
+      PageHeader({ title: this.defaultTitle })
 
       Scroll() {
         Column({ space: 20 }) {
