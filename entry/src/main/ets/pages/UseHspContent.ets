@@ -10,7 +10,7 @@ import 'hsp1/ets/pages/Login'
 @Entry({ routeName: 'useHspContentPage' })
 @ComponentV2
 struct UseHspContent {
-  private routerParams = router.getParams() as (RouterParams | ILogin);
+  @Local routerParams = router.getParams() as (RouterParams | ILogin);
   defaultTitle = RoutePagesInfo.find(item => item.url.includes('UseHspContent'))?.title
   fibonacciArr = getFibonacciArrBySum(3000)
   loginUrl = '@bundle:com.example.harmony_app_api12/hsp1/ets/pages/Login'
@@ -22,23 +22,7 @@ struct UseHspContent {
   @Local pageTranslateX: number | string = 0
 
   onPageShow(): void {
-    console.log('test_tag onPageShow this.routerParams', JSON.stringify(this.routerParams))
-    animateTo(
-      { duration: 200, curve: Curve.Smooth },
-      () => {
-        this.pageTranslateX = 0
-      })
-  }
-
-  onPageHide(): void {
-    if (this.isEnterStack) {
-      animateTo(
-        { duration: 300, curve: Curve.Smooth },
-        () => {
-          this.pageTranslateX = '-100%'
-        }
-      )
-    }
+    this.routerParams = router.getParams() as (RouterParams | ILogin)
   }
 
   build() {
