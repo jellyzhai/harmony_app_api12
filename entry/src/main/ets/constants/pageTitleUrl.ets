@@ -52,5 +52,21 @@ export const RoutePagesInfo: IPageForIndex[] = [
     {
       title: '事件发射器Emitter使用示例',
       url: 'pages/EmitterUsage'
+    },
+    {
+      title: 'ProgressMask遮罩中间镂空显示逐渐',
+      url: 'pages/ProgressMaskAttributeUsage'
+    },
+    {
+      title: 'counter计数器容器和隐私遮罩属性obscured',
+      url: 'pages/ObscuredAttributeAndCounter'
+    },
+    {
+      title: '使用组件属性bindSheet实现半屏模态框',
+      url: 'pages/BindSheetAttribute'
+    },
+    {
+      title: '使用组件属性bindContentCover实现全屏模态框',
+      url: 'pages/BindContentCoverUsage'
     }
   ];

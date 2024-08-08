@@ -81,8 +81,17 @@ export struct Login {
     .justifyContent(FlexAlign.Center)
     .linearGradient({
       direction: GradientDirection.RightBottom,
-      colors: [['rgba(255,0,0,0.1)', 0.33], ['rgba(255,0,0,0.2)', 0.66], ['rgba(255,0,0,0.3)', 1]]
+      colors: [['rgba(255,0,0,0.2)', 0.33], ['rgba(255,0,0,0.3)', 0.66], ['rgba(255,0,0,0.4)', 1]]
     })
+    // 内容静态模糊
+    // .blur(60)
+    // 背景模糊, 只作用于背景图片
+    // .backdropBlur(60)
+    // .backgroundImage($r('app.media.startIcon'), ImageRepeat.XY)
+    // .backgroundImageSize({width: 50, height: 50})
+    // .backgroundImagePosition({x: 50})
+    // 前景色 为内容的颜色
+    // .foregroundColor(Color.Gray)
     .translate({ x: this.pageTranslateX })
   }
 }

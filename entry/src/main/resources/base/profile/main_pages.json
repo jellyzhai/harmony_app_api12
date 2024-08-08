@@ -14,6 +14,10 @@
     "pages/LocalStorageUsage",
     "pages/LocalStorageUsageTest",
     "pages/PersistentStorage_Environment_Usage",
-    "pages/EmitterUsage"
+    "pages/EmitterUsage",
+    "pages/ProgressMaskAttributeUsage",
+    "pages/ObscuredAttributeAndCounter",
+    "pages/BindSheetAttribute",
+    "pages/BindContentCoverUsage"
   ]
 }
