@@ -58,7 +58,7 @@
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
         // 在调用 context.terminalSelf() 销毁能力后，不在后台任务中 显示能力快照
-        "removeMissionAfterTerminate": true,
+        "removeMissionAfterTerminate": true
         //        配置如下信息，则桌面会有入口图标
         /*"skills": [
           {
@@ -96,6 +96,16 @@
           ],
           "when": "inuse"
         }
+      }
+    ],
+    "metadata": [
+      /*
+      * 默认摄像头挖孔区域不为非安全区域，页面不避让挖孔。
+      * 从API Version 12开始，可在module.json5中添加配置项, 摄像头挖孔区域视为非安全区，实现页面默认避让挖孔：
+      */
+      {
+        "name": "avoid_cutout",
+        "value": "true"
       }
     ]
   }

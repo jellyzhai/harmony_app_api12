@@ -6,8 +6,12 @@ import { curves, promptAction } from '@kit.ArkUI';
 @ComponentV2
 struct BindContentCoverUsage {
   defaultTitle = RoutePagesInfo.find(item => item.url.includes('BindContentCoverUsage'))?.title
+  private initImageScale: number = 1
+  private initImageAngle: number = 0
   @Local message: string = '点击图片可全屏查看';
-  @Local isShowFullModal = false
+  @Local isShowFullModal: boolean = false
+  @Local imageScale: number = 1
+  @Local imageAngle: number = 0
   fj1ImgUrl: Resource = $r('app.media.fj1');
 
   toggleFullScreen() {
@@ -18,7 +22,7 @@ struct BindContentCoverUsage {
   ImageBuilder() {
     RelativeContainer() {
       Row() {
-        Text('可旋转缩放(待实现)')
+        Text('可旋转缩放')
           .fontSize(18)
           .fontWeight(FontWeight.Bold)
 
@@ -40,9 +44,9 @@ struct BindContentCoverUsage {
       .padding(20)
       .justifyContent(FlexAlign.SpaceBetween)
 
-
+      // .geometryTransition('fullScreenImage', { follow: true }) 是组件过度，sharedTransition 是页面过度
       Image(this.fj1ImgUrl)
-        .id('image')// .geometryTransition('fullScreenImage', { follow: true }) //是组件过度，sharedTransition 是页面过度
+        .id('image')
         .alignRules({
           // 外层位置key, 表示自身内部的 上中下 左中右
           center: {
@@ -53,6 +57,25 @@ struct BindContentCoverUsage {
         })
         .width('100%')
         .alignSelf(ItemAlign.Center)
+        .scale({ x: this.imageScale, y: this.imageScale })
+        .rotate({ angle: this.imageAngle })
+        .gesture(
+          // 当多个手势事件，同时作用于一个组件时，在手势绑定方法中，使用GestureGroup方法包裹
+          GestureGroup(
+            GestureMode.Parallel,
+            PinchGesture()
+              .onActionUpdate((event: GestureEvent) => {
+                this.imageScale = event.scale
+              }),
+            RotationGesture()
+              .onActionUpdate(event => {
+                // 垂直0点方向为 0°，顺时针正数，到6点方向为180°；
+                // 垂直0点方向为 0°，逆时针负数，到6点方向为-180°；
+                console.log('test_tag RotationGesture event.angle', event.angle.toString())
+                this.imageAngle = event.angle
+              })
+          )
+        )
     }
     .width('100%')
     .height('100%')
@@ -85,7 +108,8 @@ struct BindContentCoverUsage {
             promptAction.showToast({ message: data.reason.toString() })
           },
           onDisappear: () => {
-
+            this.imageScale = this.initImageScale
+            this.imageAngle = this.initImageAngle
           }
         })
     }
