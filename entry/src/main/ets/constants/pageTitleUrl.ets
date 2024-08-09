@@ -68,5 +68,13 @@ export const RoutePagesInfo: IPageForIndex[] = [
     {
       title: '使用组件属性bindContentCover实现全屏模态框',
       url: 'pages/BindContentCoverUsage'
+    },
+    {
+      title: 'TextOverflow.MARQUEE属性代替Marquee组件',
+      url: 'pages/TextOverflowMARQUEE'
+    },
+    {
+      title: 'Video组件播放音频和视频',
+      url: 'pages/VideoPlayAudio'
     }
   ];

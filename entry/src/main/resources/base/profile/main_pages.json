@@ -18,6 +18,8 @@
     "pages/ProgressMaskAttributeUsage",
     "pages/ObscuredAttributeAndCounter",
     "pages/BindSheetAttribute",
-    "pages/BindContentCoverUsage"
+    "pages/BindContentCoverUsage",
+    "pages/TextOverflowMARQUEE",
+    "pages/VideoPlayAudio"
   ]
 }
