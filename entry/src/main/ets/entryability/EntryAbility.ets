@@ -3,6 +3,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { Router, window } from '@kit.ArkUI';
 import { JSON } from '@kit.ArkTS';
 import { IPayWantParams } from '@ohos/typesCommon';
+import { notificationManager } from '@kit.NotificationKit';
 
 const localStorage = new LocalStorage()
 localStorage.setOrCreate('nameFromEntry', 'jack')
@@ -13,7 +14,6 @@ export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     const context: common.UIAbilityContext = this.context
     console.log('test_tag EntryAbility onCreate want', JSON.stringify(want))
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
 
   /*
@@ -56,6 +56,13 @@ export default class EntryAbility extends UIAbility {
         return;
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
+
+      if (!notificationManager.isNotificationEnabledSync()) {
+        notificationManager.requestEnableNotification(this.context)
+          .catch((err: Object) => {
+            console.log('test_tag notificationManager.requestEnableNotification err', JSON.stringify(err))
+          })
+      }
     });
 
     // Main window is created, set main page for this ability

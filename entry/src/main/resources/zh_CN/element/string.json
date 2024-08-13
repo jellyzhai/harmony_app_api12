@@ -25,6 +25,10 @@
       "value": "用于上传文件到服务器"
     },
     {
+      "name": "Request_reminder_notification_reason",
+      "value": "用于发布提醒通知"
+    },
+    {
       "name": "StartAbilitySpecifiedPage_desc",
       "value": "description"
     },

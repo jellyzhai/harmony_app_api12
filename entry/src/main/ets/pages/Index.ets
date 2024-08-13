@@ -6,26 +6,18 @@ import { RoutePagesInfo } from '../constants/pageTitleUrl';
 @ComponentV2
 struct Index {
   pages: IPageForIndex[] = RoutePagesInfo;
+  listMarginTop: number = 52
 
   build() {
-    Column() {
+    Stack({ alignContent: Alignment.Top }) {
       Text('可滑动查看')
-        .width('100%')
-        .textAlign(TextAlign.Center)
+        .height(this.listMarginTop)
+        .width('110%')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
-        .backgroundColor(Color.Transparent)
-
-      Divider()
-        .height(4)
-        .backgroundColor(Color.Transparent)
-        .margin({ top: 6, bottom: 6 })
-        .shadow({
-          radius: 24,
-          offsetY: 22,
-          color: Color.Gray,
-          type: ShadowType.COLOR
-        })
+        .textAlign(TextAlign.Center)
+        .backdropBlur(60)
+        .zIndex(9)
 
       List({ space: 16 }) {
         Repeat(this.pages)
@@ -38,11 +30,11 @@ struct Index {
                   router.pushUrl({ url: data.item.url, params: { title: data.item.title } })
                 })
             }
+            .margin({ top: data.index === 0 ? this.listMarginTop : 0 })
           })
       }
-      .layoutWeight(1)
     }
-    .padding(16)
+    .padding({ right: 16, bottom: 16, left: 16 })
     .height('100%')
     .width('100%')
   }

@@ -20,6 +20,13 @@
     "pages/BindSheetAttribute",
     "pages/BindContentCoverUsage",
     "pages/TextOverflowMARQUEE",
-    "pages/VideoPlayAudio"
+    "pages/VideoPlayAudio",
+    "pages/NotificationManagerTextUsage",
+    "pages/NotificationManagerProgressBar",
+    "pages/NotificationManagerWantAgent",
+    "pages/ReminderAgentManagerTimer",
+    "pages/ReminderAgentManagerAlarm",
+    "pages/ReminderAgentManagerCalendar",
+    "pages/ThirdPartLibUsageLottie"
   ]
 }

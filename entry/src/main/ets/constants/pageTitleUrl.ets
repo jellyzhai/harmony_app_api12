@@ -76,5 +76,33 @@ export const RoutePagesInfo: IPageForIndex[] = [
     {
       title: 'Video组件播放音频和视频',
       url: 'pages/VideoPlayAudio'
+    },
+    {
+      title: 'notificationManager文本通知示例',
+      url: 'pages/NotificationManagerTextUsage'
+    },
+    {
+      title: 'notificationManager进度通知示例',
+      url: 'pages/NotificationManagerProgressBar'
+    },
+    {
+      title: 'notificationManager意图代理通知示例【待解决获取意图代理对象为{}】',
+      url: 'pages/NotificationManagerWantAgent'
+    },
+    {
+      title: 'ReminderAgentManager倒计时提醒通知',
+      url: 'pages/ReminderAgentManagerTimer'
+    },
+    {
+      title: 'ReminderAgentManager闹钟提醒通知',
+      url: 'pages/ReminderAgentManagerAlarm'
+    },
+    {
+      title: 'ReminderAgentManager日历提醒通知',
+      url: 'pages/ReminderAgentManagerCalendar'
+    },
+    {
+      title: '三方库Lottie使用示例',
+      url: 'pages/ThirdPartLibUsageLottie'
     }
   ];

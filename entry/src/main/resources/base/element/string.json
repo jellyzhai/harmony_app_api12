@@ -25,6 +25,10 @@
       "value": "using for upload file to server"
     },
     {
+      "name": "Request_reminder_notification_reason",
+      "value": "using for publish reminder notification"
+    },
+    {
       "name": "StartAbilitySpecifiedPage_desc",
       "value": "description"
     },
