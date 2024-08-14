@@ -1,2 +1,5 @@
 {
+  "hsp1": {
+    "source": "src/mock/hsp1.mock.ets"
+  }
 }

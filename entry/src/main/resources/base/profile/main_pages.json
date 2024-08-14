@@ -27,6 +27,7 @@
     "pages/ReminderAgentManagerTimer",
     "pages/ReminderAgentManagerAlarm",
     "pages/ReminderAgentManagerCalendar",
-    "pages/ThirdPartLibUsageLottie"
+    "pages/ThirdPartLibUsageLottie",
+    "pages/MediaQueryUsage"
   ]
 }

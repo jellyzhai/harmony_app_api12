@@ -1,8 +1,9 @@
 import { INewsListItem } from '../../viewModels/newsCreateLoadRefresh'
 import { promptAction } from '@kit.ArkUI'
-import { fileUri, fileIo as fs, picker } from '@kit.CoreFileKit'
+import { fileUri, fileIo as fs } from '@kit.CoreFileKit'
 import { JSON } from '@kit.ArkTS'
 import { common } from '@kit.AbilityKit'
+import { photoAccessHelper } from '@kit.MediaLibraryKit'
 
 @ComponentV2
 export struct PublishNews {
@@ -52,13 +53,13 @@ export struct PublishNews {
               .textAlign(TextAlign.Center)
               .borderRadius(16)
               .onClick(() => {
-                const selectOptions = new picker.PhotoSelectOptions()
-                selectOptions.MIMEType = picker.PhotoViewMIMETypes.IMAGE_TYPE
+                const selectOptions = new photoAccessHelper.PhotoSelectOptions()
+                selectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE
                 selectOptions.maxSelectNumber = 1
 
-                const viewPicker = new picker.PhotoViewPicker()
+                const viewPicker = new photoAccessHelper.PhotoViewPicker()
                 viewPicker.select(selectOptions)
-                  .then((result: picker.PhotoSelectResult) => {
+                  .then((result: photoAccessHelper.PhotoSelectResult) => {
                     const selectedImgUrl = result.photoUris[0]
                     if (selectedImgUrl) {
                       const destFilePath = this.uiAbilityContext.filesDir + selectedImgUrl.split('/').reverse()[0]

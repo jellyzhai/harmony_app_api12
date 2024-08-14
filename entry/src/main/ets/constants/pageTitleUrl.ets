@@ -104,5 +104,9 @@ export const RoutePagesInfo: IPageForIndex[] = [
     {
       title: '三方库Lottie使用示例',
       url: 'pages/ThirdPartLibUsageLottie'
+    },
+    {
+      title: 'mediaquery使用示例',
+      url: 'pages/MediaQueryUsage'
     }
   ];
