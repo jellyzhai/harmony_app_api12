@@ -108,5 +108,13 @@ export const RoutePagesInfo: IPageForIndex[] = [
     {
       title: 'mediaquery使用示例',
       url: 'pages/MediaQueryUsage'
+    },
+    {
+      title: 'DataPanel数据面板使用示例',
+      url: 'pages/DataPanelUsage'
+    },
+    {
+      title: '文本组件内使用SymbolSpan符号图标，SymbolGlyph符号图形组件用于其他组件',
+      url: 'pages/SymbolSpanSymbolGlyph'
     }
   ];

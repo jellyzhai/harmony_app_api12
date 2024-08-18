@@ -43,12 +43,32 @@ struct NavigationPage {
   ]
   toolbars: ToolbarItem[] = this.menus
 
-/*  @Builder
-  NavDestinationBuilder(name: string, param: Record<string, string>) {
-    if (name === 'InitNavDestinationPage') {
-      InitNavDestinationPage({ name, param })
-    }
-  }*/
+  /*  @Builder
+    NavDestinationBuilder(name: string, param: Record<string, string>) {
+      if (name === 'InitNavDestinationPage') {
+        InitNavDestinationPage({ name, param })
+      }
+    }*/
+
+  aboutToAppear(): void {
+    // 设置路由拦截
+    this.pathStack.setInterception({
+      willShow: (from, to) => {
+        const navPathStack: NavPathStack | null = typeof from === 'string' ? null : from.pathStack
+        const fromPathName = typeof from === 'string' ? from : from.pathInfo.name
+        const toPathName = typeof to === 'string' ? to : to.pathInfo.name
+
+        promptAction.showToast({
+          message: `从组件路径名称 ${fromPathName} 出发，将要到达组件路径名称 ${toPathName}`,
+          duration: 4000
+        })
+
+        if (navPathStack) {
+          //   可以根据条件，使用 navPathStack 设置最终的导航目的地
+        }
+      }
+    })
+  }
 
   build() {
     Navigation(this.pathStack) {

@@ -63,12 +63,14 @@ struct ComponentOne {
 
         Button() {
           Text('push到 ComponentOnTwo 组件，当ComponentTwo组件 弹出路由栈 并携带参数时，当前组件可以处理')
+            .padding(16)
+            .fontColor(Color.White)
         }
         .onClick(() => {
           this.pathStack.removeByName('ComponentTwo')
 
           animateTo({ duration: 500 }, () => {
-            // 第3个 onPop 方法的参数，是当前组件到达目的组件后，目的组件弹出时，传递的参数
+            // 第3个 onPop 方法的参数，是当前组件到达目的组件后，目的组件弹出组件路由栈时，传递的参数
             this.pathStack.pushDestinationByName('ComponentTwo', { info: 'i from ComponentOne' },
               (popInfo: PopInfo) => {
                 this.popComponentPathInfo = popInfo.info

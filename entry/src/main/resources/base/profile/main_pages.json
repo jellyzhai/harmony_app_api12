@@ -28,6 +28,8 @@
     "pages/ReminderAgentManagerAlarm",
     "pages/ReminderAgentManagerCalendar",
     "pages/ThirdPartLibUsageLottie",
-    "pages/MediaQueryUsage"
+    "pages/MediaQueryUsage",
+    "pages/DataPanelUsage",
+    "pages/SymbolSpanSymbolGlyph"
   ]
 }

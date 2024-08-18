@@ -107,6 +107,16 @@
           "when": "inuse"
         }
       },
+      /*{
+        "name": "ohos.permission.DISTRIBUTED_DATASYNC",
+        "reason": "$string:Request_reminder_notification_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },*/
     ],
     "metadata": [
       /*
