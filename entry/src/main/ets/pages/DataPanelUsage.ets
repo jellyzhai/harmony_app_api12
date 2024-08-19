@@ -1,12 +1,37 @@
 import { RoutePagesInfo } from '../constants/pageTitleUrl';
 import { PageHeader } from '../views/PageHeader';
-import { DataPanelModifier } from '@kit.ArkUI';
 
-// class MyDataPanelModifier extends DataPanelModifier implements ContentModifier<DataPanelConfiguration> {
-//   applyContent(builder: (...args: [DataPanelConfiguration]) => void): WrappedBuilder<[DataPanelConfiguration]> {
-//     return new WrappedBuilder(builder);
-//   }
-// }
+@Builder
+function DataPanelBuilder(config: DataPanelConfiguration) {
+  Column({ space: 8 }) {
+    ForEach(config.values, (item: number, index: number) => {
+      Row({ space: 16 }) {
+        Rect({ width: item * 10, height: 25, radius: 8 })
+          .foregroundColor(`rgba(0,0,255,0.${index + 1})`)
+
+        Text(`${((item / 150) * 100).toFixed(2)}%`)
+      }
+    })
+
+    Divider()
+      .color(Color.Black)
+
+    Row() {
+      Text('数量 6')
+      Text('最大 150')
+    }
+    .width('100%')
+    .justifyContent(FlexAlign.SpaceAround)
+  }
+  .alignItems(HorizontalAlign.Start)
+  .height('100%')
+}
+
+class MyDataPanelModifier implements ContentModifier<DataPanelConfiguration> {
+  applyContent(): WrappedBuilder<[DataPanelConfiguration]> {
+    return new WrappedBuilder(DataPanelBuilder);
+  }
+}
 
 @Entry
 @ComponentV2
@@ -15,7 +40,6 @@ struct DataPanelUsage {
   @Local numArr: number[] = [5, 7, 9, 11, 13, 15, 17, 19, 21];
   @Local colorArr: string[] = Array(7).fill(0).map((_: ESObject, i) => `rgba(0,0,255,0.${i + 1})`)
   @Local progressVal: number = 30;
-  @Local contentModifier = new DataPanelModifier()
 
   build() {
     Column({ space: 16 }) {
@@ -25,9 +49,16 @@ struct DataPanelUsage {
         ListItem() {
           Column() {
             Text() {
+              SymbolSpan($r('sys.symbol.wifi_slash'))
+                .fontSize(20)
+            }
+            .position({x: 0})
+            Text() {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontSize(20)
             }
+            .offset({x: 100})
+
             Text('基本使用, 自定义最大值，数据个数最多9个')
 
             DataPanel({ values: this.numArr, max: 150 })
@@ -48,10 +79,6 @@ struct DataPanelUsage {
               .width(200)
               .height(200)
               .valueColors(this.colorArr)
-              // 待确认使用方法
-              // .contentModifier(this.contentModifier)
-
-
           }
           .padding(8)
           .borderRadius(8)
@@ -104,6 +131,21 @@ struct DataPanelUsage {
             }
           }
           .padding(8)
+          .borderRadius(8)
+          .border({ width: 1 })
+        }
+        .width('100%')
+
+        ListItem() {
+          Column({ space: 16 }) {
+            Text('使用DataPanel组件的 contentModifier 属性，自定义数据面板组件')
+
+            DataPanel({ values: this.numArr, max: 150 })// .width(200)
+              .height(350)
+              .contentModifier(new MyDataPanelModifier())
+          }
+          .padding(8)
+          .margin(8)
           .borderRadius(8)
           .border({ width: 1 })
         }

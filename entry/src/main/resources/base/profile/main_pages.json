@@ -30,6 +30,7 @@
     "pages/ThirdPartLibUsageLottie",
     "pages/MediaQueryUsage",
     "pages/DataPanelUsage",
-    "pages/SymbolSpanSymbolGlyph"
+    "pages/SymbolSpanSymbolGlyph",
+    "pages/LocationPasteSaveButton"
   ]
 }

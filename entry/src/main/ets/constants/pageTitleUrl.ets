@@ -116,5 +116,9 @@ export const RoutePagesInfo: IPageForIndex[] = [
     {
       title: '文本组件内使用SymbolSpan符号图标，SymbolGlyph符号图形组件用于其他组件',
       url: 'pages/SymbolSpanSymbolGlyph'
+    },
+    {
+      title: '定位按钮/粘贴按钮/保存按钮使用示例',
+      url: 'pages/LocationPasteSaveButton'
     }
   ];
