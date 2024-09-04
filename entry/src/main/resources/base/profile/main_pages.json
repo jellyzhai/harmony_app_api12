@@ -31,6 +31,8 @@
     "pages/MediaQueryUsage",
     "pages/DataPanelUsage",
     "pages/SymbolSpanSymbolGlyph",
-    "pages/LocationPasteSaveButton"
+    "pages/LocationPasteSaveButton",
+    "pages/WebShowHTML",
+    "pages/RequestPermissionFromUser"
   ]
 }

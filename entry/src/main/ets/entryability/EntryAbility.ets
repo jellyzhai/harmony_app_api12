@@ -1,9 +1,10 @@
-import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
+import { abilityAccessCtrl, AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { Router, window } from '@kit.ArkUI';
 import { JSON } from '@kit.ArkTS';
 import { IPayWantParams } from '@ohos/typesCommon';
 import { notificationManager } from '@kit.NotificationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const localStorage = new LocalStorage()
 localStorage.setOrCreate('nameFromEntry', 'jack')
@@ -56,6 +57,18 @@ export default class EntryAbility extends UIAbility {
         return;
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
+
+      /*const atManager = abilityAccessCtrl.createAtManager();
+
+      // 向用户请求位置权限设置。
+      atManager.requestPermissionsFromUser(this.context, ["ohos.permission.APPROXIMATELY_LOCATION"])
+        .then((data) => {
+          console.info('test_tag data:' + JSON.stringify(data));
+          console.info('test_tag data permissions:' + data.permissions);
+          console.info('test_tag data authResults:' + data.authResults);
+        }).catch((error: BusinessError) => {
+        console.error(`test_tag Failed to request permissions from user. Code is ${error.code}, message is ${error.message}`);
+      })*/
 
       if (!notificationManager.isNotificationEnabledSync()) {
         notificationManager.requestEnableNotification(this.context)

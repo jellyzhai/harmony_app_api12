@@ -43,6 +43,14 @@
     {
       "name": "StartSpecifiedAbilityIntoSpecifiedPage_label",
       "value": "label"
+    },
+    {
+      "name": "usingForInternet",
+      "value": "using for request html and server data"
+    },
+    {
+      "name": "usingForApproximatelyLocation",
+      "value": "Used for scenarios where location is needed during software running"
     }
   ]
 }

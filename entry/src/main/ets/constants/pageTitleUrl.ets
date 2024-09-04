@@ -120,5 +120,13 @@ export const RoutePagesInfo: IPageForIndex[] = [
     {
       title: '定位按钮/粘贴按钮/保存按钮使用示例',
       url: 'pages/LocationPasteSaveButton'
+    },
+    {
+      title: 'Web组件与内部HTML页面交互, request模块的上传下载',
+      url: 'pages/WebShowHTML'
+    },
+    {
+      title: '手动向用户请求权限',
+      url: 'pages/RequestPermissionFromUser'
     }
   ];

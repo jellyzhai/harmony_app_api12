@@ -31,7 +31,7 @@ struct PersistentStorage_Environment_Usage {
   defaultTitle = RoutePagesInfo.find(item => item.url.includes('PersistentStorage_Environment_Usage'))?.title
 
   checkInputError() {
-    this.isInputError = this.readingProgressCopy < 0 || this.readingProgressCopy > 100
+    this.isInputError = this.readingProgressCopy <= 0 || this.readingProgressCopy > 100
   }
 
   build() {
@@ -50,7 +50,7 @@ struct PersistentStorage_Environment_Usage {
             })
 
           Button('更新进度')
-            .enabled(!this.isInputError)
+            .enabled(this.readingProgressCopy > 0 && !this.isInputError)
             .onClick(() => {
               promptAction.showToast({ message: '更新成功' })
               this.readingProgress = this.readingProgressCopy

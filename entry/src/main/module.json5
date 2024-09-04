@@ -88,6 +88,26 @@
     ],
     "requestPermissions": [
       {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": "$string:usingForApproximatelyLocation",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "$string:usingForInternet",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
         "name": "ohos.permission.READ_MEDIA",
         "reason": "$string:ReadUserMediaReason",
         "usedScene": {

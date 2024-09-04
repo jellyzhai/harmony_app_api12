@@ -43,6 +43,14 @@
     {
       "name": "StartSpecifiedAbilityIntoSpecifiedPage_label",
       "value": "label"
+    },
+    {
+      "name": "usingForInternet",
+      "value": "用于服务器数据和Web组件请求html页面"
+    },
+    {
+      "name": "usingForApproximatelyLocation",
+      "value": "用于软件运行期间需要用到位置的场景"
     }
   ]
 }

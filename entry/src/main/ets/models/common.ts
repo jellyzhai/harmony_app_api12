@@ -9,3 +9,7 @@ export interface WantParametersForResult extends Record<string, Object> {
   info: string;
   callerWant: Want
 }
+
+export enum IWebMessage {
+  NotLogin = 'not_login'
+}
