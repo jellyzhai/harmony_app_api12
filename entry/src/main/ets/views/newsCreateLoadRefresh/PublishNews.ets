@@ -7,7 +7,7 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit'
 
 @ComponentV2
 export struct PublishNews {
-  @Local news = new INewsListItem()
+  @Local news: INewsListItem = new INewsListItem()
   @Local selectImgUrl: string = ''
   navPathStack: NavPathStack = new NavPathStack()
   uiAbilityContext = getContext(this) as common.UIAbilityContext

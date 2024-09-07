@@ -7,11 +7,11 @@ import { emitter } from '@kit.BasicServicesKit';
 struct EmitterUsage {
   defaultTitle = RoutePagesInfo.find(item => item.url.includes('EmitterUsage'))?.title
   innerEvent: emitter.InnerEvent = { eventId: 101 }
-  @Local dataFromParentForEmit = ''
-  @Local dataFromParent = ''
+  @Local dataFromParentForEmit: string = ''
+  @Local dataFromParent: string = ''
   eventId: string = 'emitter2'
-  @Local dataFromParentForEmit2 = ''
-  @Local dataFromParent2 = ''
+  @Local dataFromParentForEmit2: string = ''
+  @Local dataFromParent2: string = ''
 
   aboutToAppear(): void {
     emitter.on(this.innerEvent, (data) => {

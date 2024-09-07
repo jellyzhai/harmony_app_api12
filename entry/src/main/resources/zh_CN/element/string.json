@@ -51,6 +51,14 @@
     {
       "name": "usingForApproximatelyLocation",
       "value": "用于软件运行期间需要用到位置的场景"
+    },
+    {
+      "name": "READ_PASTEBOARD",
+      "value": "读取粘贴板"
+    },
+    {
+      "name": "WRITE_IMAGEVIDEO",
+      "value": "写入相册数据"
     }
   ]
 }

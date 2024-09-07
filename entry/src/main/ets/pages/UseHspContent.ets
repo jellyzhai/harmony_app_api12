@@ -13,7 +13,7 @@ import { JSON } from '@kit.ArkTS';
 @Entry({ routeName: 'useHspContentPage' })
 @ComponentV2
 struct UseHspContent {
-  @Local routerParams = router.getParams() as (RouterParams | ILogin);
+  @Local routerParams: RouterParams | ILogin = router.getParams() as (RouterParams | ILogin);
   defaultTitle = RoutePagesInfo.find(item => item.url.includes('UseHspContent'))?.title
   fibonacciArr = getFibonacciArrBySum(3000)
   loginUrl = '@bundle:com.example.harmony_app_api12/hsp1/ets/pages/Login'
@@ -23,7 +23,7 @@ struct UseHspContent {
   isEnterStack = true
   context = getContext(this) as common.UIAbilityContext
   @Local pixelMap: image.PixelMap | null = null
-  @Local poemTextWidth = 16
+  @Local poemTextWidth: number = 16
   @Local pageTranslateX: number | string = 0
 
   aboutToAppear(): void {

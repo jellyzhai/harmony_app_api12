@@ -51,6 +51,14 @@
     {
       "name": "usingForApproximatelyLocation",
       "value": "Used for scenarios where location is needed during software running"
+    },
+    {
+      "name": "READ_PASTEBOARD",
+      "value": "READ PASTEBOARD"
+    },
+    {
+      "name": "WRITE_IMAGEVIDEO",
+      "value": "READ IMAGEVIDEO"
     }
   ]
 }

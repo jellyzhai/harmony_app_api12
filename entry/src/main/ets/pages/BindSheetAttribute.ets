@@ -71,7 +71,7 @@ struct BindSheetAttribute {
   private secondLayerAddr = this.firstLayerAddr.children?.[0]
   @Local selectedAddress: string =
     `${this.firstLayerAddr.text}-${this.secondLayerAddr?.text}-${this.secondLayerAddr?.children?.[0].text}`;
-  @Local isShowSheet = false
+  @Local isShowSheet: boolean = false
 
   @Builder
   AddressBuilder() {

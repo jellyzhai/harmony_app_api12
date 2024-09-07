@@ -14,7 +14,7 @@ struct LocationPasteSaveButton {
   defaultTitle = RoutePagesInfo.find(item => item.url.includes('LocationPasteSaveButton'))?.title
   textInputController: TextInputController = new TextInputController()
   context = getContext(this) as common.UIAbilityContext;
-  @Local isClickedLocationBtn = false
+  @Local isClickedLocationBtn: boolean = false
   @Local inputText: string = '';
   @Local currentLocation: geoLocationManager.Location | geoLocationManager.GeoAddress[] | undefined = undefined;
   @Local imgUri: string = ''

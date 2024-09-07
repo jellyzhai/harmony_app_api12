@@ -6,7 +6,7 @@ import { RoutePagesInfo } from '../constants/pageTitleUrl';
 @Entry
 @ComponentV2
 struct CustomDialogPage {
-  @Local enableNotify = true
+  @Local enableNotify: boolean = true
   defaultTitle = RoutePagesInfo.find(item => item.url.includes('CustomDialogPage'))?.title
   routerParams = router.getParams() as RouterParams;
   firstDialogController = new CustomDialogController({

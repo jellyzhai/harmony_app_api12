@@ -20,12 +20,12 @@ struct TextPickerPage {
     icon: $r(`app.media.${item}`),
     text: item
   } as TextPickerRangeContent))
-  @Local firstIconTextSelectedIndex = 0
-  @Local secondIconTextSelectedIndex = 1
-  @Local thirdIconTextSelectedIndex = 2
+  @Local firstIconTextSelectedIndex: number = 0
+  @Local secondIconTextSelectedIndex: number = 1
+  @Local thirdIconTextSelectedIndex: number = 2
   private raffleInitTimes = 5
-  @Local raffleTimes = this.raffleInitTimes
-  @Local raffleInProgress = false
+  @Local raffleTimes: number = this.raffleInitTimes
+  @Local raffleInProgress: boolean = false
   @Local multiColumnText: string[][] = [
     ['2020年', '2021年', '2022年', '2023年', '2024年'],
     ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
