@@ -4,6 +4,7 @@ import { fileUri, fileIo as fs } from '@kit.CoreFileKit'
 import { JSON } from '@kit.ArkTS'
 import { common } from '@kit.AbilityKit'
 import { photoAccessHelper } from '@kit.MediaLibraryKit'
+import { NavPathStackManager } from '../../viewModels/NavPathStackManager'
 
 @ComponentV2
 export struct PublishNews {
@@ -11,6 +12,10 @@ export struct PublishNews {
   @Local selectImgUrl: string = ''
   navPathStack: NavPathStack = new NavPathStack()
   uiAbilityContext = getContext(this) as common.UIAbilityContext
+
+  aboutToAppear(): void {
+    this.navPathStack = NavPathStackManager.getNavPathStackManager().getNavPathStack() as NavPathStack
+  }
 
   build() {
     NavDestination() {
@@ -125,7 +130,7 @@ export struct PublishNews {
     .title('新闻发布')
     .backgroundColor('rgba(0,0,0,0.1)')
     .onReady(context => {
-      this.navPathStack = context.pathStack
+      // this.navPathStack = context.pathStack
     })
     .onBackPressed(() => {
       promptAction.showDialog({

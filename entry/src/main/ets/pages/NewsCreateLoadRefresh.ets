@@ -2,6 +2,7 @@ import { INewsListItem } from '../viewModels/newsCreateLoadRefresh'
 import { JSON } from '@kit.ArkTS'
 import { CommonUtils } from '../viewModels/common'
 import { PublishNews } from '../views/newsCreateLoadRefresh/PublishNews'
+import { NavPathStackManager } from '../viewModels/NavPathStackManager'
 
 @Entry
 @ComponentV2
@@ -27,8 +28,13 @@ struct NewsCreateLoadRefresh {
     return this.listWidth - 88
   }
 
+  setGlobalNavPathStack(navPathStack: NavPathStack) {
+    NavPathStackManager.getNavPathStackManager().setNavPathStack(navPathStack)
+  }
+
   aboutToAppear(): void {
-    this.newsList = ['A','B','C','D','E','F','G','H','I','J'].map((value, index) => {
+    this.setGlobalNavPathStack(this.navPathStack)
+    this.newsList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'].map((value, index) => {
       return {
         title: index + 1 + `${value}、Object literal must correspond to some explicitly declared class or interface`,
         icon: $r(`app.media.${this.icons[index % 5]}`),
