@@ -6,7 +6,7 @@ import { RoutePagesInfo } from '../constants/pageTitleUrl';
 @ComponentV2
 struct Index {
   pages: IPageForIndex[] = RoutePagesInfo;
-  listMarginTop: number = 52
+  listMarginTop: number = 52;
 
   build() {
     Stack({ alignContent: Alignment.Top }) {
