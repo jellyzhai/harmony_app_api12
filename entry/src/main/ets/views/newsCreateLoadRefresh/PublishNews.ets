@@ -14,7 +14,8 @@ export struct PublishNews {
   uiAbilityContext = getContext(this) as common.UIAbilityContext
 
   aboutToAppear(): void {
-    this.navPathStack = NavPathStackManager.getNavPathStackManager().getNavPathStack() as NavPathStack
+    // 使用场景限制：应用中只有一个 NavPathStack
+    // this.navPathStack = NavPathStackManager.getNavPathStackManager().getNavPathStack() as NavPathStack
   }
 
   build() {
@@ -130,7 +131,7 @@ export struct PublishNews {
     .title('新闻发布')
     .backgroundColor('rgba(0,0,0,0.1)')
     .onReady(context => {
-      // this.navPathStack = context.pathStack
+      this.navPathStack = context.pathStack
     })
     .onBackPressed(() => {
       promptAction.showDialog({

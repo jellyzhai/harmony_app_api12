@@ -8,7 +8,8 @@
   "dependencies": {
     "@ohos/typesCommon": "file:../common/typesCommon",
     "hsp1": "file:../hsp1",
-    "@ohos/lottie": "^2.0.11"
+    "@ohos/lottie": "^2.0.11",
+    "class-transformer": "^0.5.1"
   },
   "devDependencies": {},
   "dynamicDependencies": {}

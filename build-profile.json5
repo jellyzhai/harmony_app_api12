@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\18039\\.ohos\\config\\default_harmony_app_api12_Hse7NvAplo4sGrWabOVgO3r6TwTKQGi8yGiU6fp2aVw=.cer",
-          "storePassword": "0000001B860F04730DB495853363D5A0CC00DE982E3CF7DEBAE004701B0C51A052C4C1C9A26CEC9074C6FA",
+          "certpath": "C:\\Users\\issuser\\.ohos\\config\\default_harmony_app_api12_PCyXsuoLm9qAaTRWaFmfgnVZxz1apYAFfLtNLblsOlQ=.cer",
+          "storePassword": "0000001BE588C60D113130780B6F3C579732554B99058AEF43C4DD2E602823A82E108423855A188C4F901D",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B7560C2304F059999AEACB9312C96514886EE0BEAC7C2528CAD809392028B15F81C475FE0891904",
-          "profile": "C:\\Users\\18039\\.ohos\\config\\default_harmony_app_api12_Hse7NvAplo4sGrWabOVgO3r6TwTKQGi8yGiU6fp2aVw=.p7b",
+          "keyPassword": "0000001BDFDD772E0EA8D954F3A68D1048E6AFA9C1D9B53E724685FE850D6271E3030772CAD916F9BF5183",
+          "profile": "C:\\Users\\issuser\\.ohos\\config\\default_harmony_app_api12_PCyXsuoLm9qAaTRWaFmfgnVZxz1apYAFfLtNLblsOlQ=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\18039\\.ohos\\config\\default_harmony_app_api12_Hse7NvAplo4sGrWabOVgO3r6TwTKQGi8yGiU6fp2aVw=.p12"
+          "storeFile": "C:\\Users\\issuser\\.ohos\\config\\default_harmony_app_api12_PCyXsuoLm9qAaTRWaFmfgnVZxz1apYAFfLtNLblsOlQ=.p12"
         }
       }
     ],
